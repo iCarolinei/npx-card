@@ -65,7 +65,7 @@ console.log('           ~    ~ ');
                 {
                     padding: {top : 3,bottom: 3 , left : 5,right:15},
                     margin: {top : 1,bottom: 1, left : 0,right:0},
-                    borderStyle: "bold",
+                    borderStyle: "double",
                    
                 },
             ),
