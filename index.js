@@ -6,7 +6,6 @@ const boxen = require("boxen");
 const chalk = require("chalk");
 const terminalImage = require('terminal-image');
 const got = require('got');
-var align = require('align-text');
 
 const log = console.log;
 const NEWLINE = "\n";
@@ -14,7 +13,7 @@ const EMPTYLINE = "";
 
 
 const data = {
-    name: align(chalk.hex("#DDA0DD").bold("C") + chalk.red.bold("a") + chalk.hex('##FFA500')("r") + chalk.yellow("o") + chalk.green("l") + chalk.blue("i") + chalk.black("n") + chalk.red("e") + " " + chalk.hex('##FFA500')("J") + chalk.yellow("a") + chalk.green("n") + chalk.blue("s") + chalk.white("e") + chalk.hex("#DDA0DD")("n") + "  🦄",8),
+    name: chalk.hex("#DDA0DD").bold("C") + chalk.red.bold("a") + chalk.hex('##FFA500')("r") + chalk.yellow("o") + chalk.green("l") + chalk.blue("i") + chalk.black("n") + chalk.red("e") + " " + chalk.hex('##FFA500')("J") + chalk.yellow("a") + chalk.green("n") + chalk.blue("s") + chalk.white("e") + chalk.hex("#DDA0DD")("n") + "  🦄",
     work: chalk.red("Junior web"),
     npm: chalk.hex('##FFA500')("https://npmjs.com/") + chalk.red("~spooknick"),
     github: chalk.yellow("https://github.com/") + chalk.hex('##FFA500')("iCarolinei"),
@@ -42,7 +41,7 @@ console.log('           ~    ~ ');
  
 (async () => {
     const body = await got('https://www.vhv.rs/dpng/d/425-4256407_anime-pokemon-png-transparent-image-fat-pikachu-png.png').buffer();
-    let img = align(await terminalImage.buffer(body, {width: '40%', height: '40%'}),10);
+    let img = await terminalImage.buffer(body, {width: 14, height: 14});
 
     let imgParts = img.split(NEWLINE);
     let sep = "    ";
@@ -53,19 +52,19 @@ console.log('           ~    ~ ');
                 [
                     `                         ${data.name} `,
                     EMPTYLINE,
-                     `                              ${data.labelWork} ${data.work}`,
-                    imgParts[0] + EMPTYLINE,
-                    imgParts[1] + sep + `${data.labelNpm} ${data.npm}`,
-                    imgParts[2] + sep +`${data.labelGitHub} ${data.github}`,
-                    imgParts[3] + sep +`${data.labelWeb} ${data.web}`,
-                    imgParts[4] + EMPTYLINE,
-                    imgParts[5] + sep + `${data.labelCard} ${data.npx}`,
-                    imgParts[6]
+                     `                  ${data.labelWork} ${data.work}`,
+                     imgParts[0] + EMPTYLINE,
+                     imgParts[1] + sep + `${data.labelNpm} ${data.npm}`,
+                     imgParts[2] + sep +`${data.labelGitHub} ${data.github}`,
+                     imgParts[3] + sep +`${data.labelWeb} ${data.web}`,
+                     imgParts[4] + EMPTYLINE,
+                     imgParts[5] + sep + `${data.labelCard} ${data.npx}`,
+                     imgParts[6]
                 ].join(NEWLINE) ,
     
                 {
-                    padding: {top : 3,bottom: 3 , left : 0,right:15},
-                    margin: {top : 1,bottom: 1, left : 15,right:0},
+                    padding: {top : 3,bottom: 3 , left : 5,right:15},
+                    margin: {top : 1,bottom: 1, left : 0,right:0},
                     borderStyle: "bold",
                    
                 },
