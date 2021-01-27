@@ -1,0 +1,26 @@
+{
+  "name": "spooknick",
+  "version": "1.0.0",
+  "description": "My card",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iCarolinei/npx-card.git"
+  },
+  "author": "Caroline Jansen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iCarolinei/npx-card/issues"
+  },
+  "homepage": "https://github.com/iCarolinei/npx-card#readme",
+  "dependencies": {
+    "align-text": "^1.0.2",
+    "boxen": "^5.0.0",
+    "chalk": "^4.1.0",
+    "terminal-image": "^1.2.1",
+    "terminal-link": "^2.1.1"
+  }
+}
