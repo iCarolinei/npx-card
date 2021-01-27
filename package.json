@@ -23,6 +23,7 @@
     "align-text": "^1.0.2",
     "boxen": "^5.0.0",
     "chalk": "^4.1.0",
+    "got": "^11.8.1",
     "terminal-image": "^1.2.1",
     "terminal-link": "^2.1.1"
   }

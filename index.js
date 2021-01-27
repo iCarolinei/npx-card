@@ -5,6 +5,7 @@
 const boxen = require("boxen");
 const chalk = require("chalk");
 const terminalImage = require('terminal-image');
+const got = require('got');
 var align = require('align-text');
 
 const log = console.log;
@@ -27,30 +28,6 @@ const data = {
     labelCard: chalk.black.bold("Card:"),
 };
 
-// console.log(
-//     chalk.hex("#FFD700")(
-//         boxen(
-//             [
-//                 `${data.name} `,
-//                 EMPTYLINE,
-//                 `${data.labelWork} ${data.work}`,
-//                 EMPTYLINE,
-//                 `${data.labelNpm} ${data.npm}`,
-//                 `${data.labelGitHub} ${data.github}`,
-//                 `${data.labelWeb} ${data.web}`,
-//                 EMPTYLINE,
-//                 `${data.labelCard} ${data.npx}`,
-//             ].join(NEWLINE),
-
-//             {
-//                 padding: 5,
-//                 margin: 15,
-//                 borderStyle: "bold",
-               
-//             },
-//         ),
-//     ),
-// );
 
 console.log ( "a little archer just like that !");
 
@@ -64,7 +41,9 @@ console.log('           ~    ~ ');
 
  
 (async () => {
-    let img = align(await terminalImage.file('pikachu.png', {width: '40%', height: '40%'}),10);
+    const body = await got('https://www.vhv.rs/dpng/d/425-4256407_anime-pokemon-png-transparent-image-fat-pikachu-png.png').buffer();
+    let img = align(await terminalImage.buffer(body, {width: '40%', height: '40%'}),10);
+
     let imgParts = img.split(NEWLINE);
     let sep = "    ";
 
